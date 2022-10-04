@@ -2,6 +2,7 @@
 #include <chrono>
 using namespace std;
 using namespace std::chrono;
+
 int binary_search(int arr[], int first, int last, int key)
 {
  if (last >= first) {
