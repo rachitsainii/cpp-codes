@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+
 using namespace std;
 
 int lcs3(string s1, string s2, string s3, int m, int n, int o, int cache[101][101][101]){
