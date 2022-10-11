@@ -30,6 +30,5 @@ int knapsack(int *wt,int *val,int n,int W){
 		
 		cout<<knapsack(wt,val,3,W);
 
-
 	return 0;
 	}
