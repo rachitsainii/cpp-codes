@@ -13,6 +13,7 @@ int binary_search(int arr[], int first, int last, int key)
  return binary_search(arr, first, mid - 1, key);
  return binary_search(arr, mid + 1, last, key);
  }
+ 
  return -1;
 }
 
