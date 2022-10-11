@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main()
+int main()
 {
     int frac1[2]={};
     printf("Enter numerator and denominator of the fraction: ");
@@ -42,5 +42,6 @@ void main()
     }
     
     printf("Normalised fraction: %d/%d\n", frac1[0], frac1[1]);
-    
+ 
+    return 0;
 }
