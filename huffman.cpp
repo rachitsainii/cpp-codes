@@ -120,7 +120,5 @@ freq.insert(freq.end(), f);
   set1.Generate_Huffman_tree(data, freq, size);
   }
 
-  
-
   return 0;
 }
