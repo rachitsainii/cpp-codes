@@ -7,6 +7,7 @@ void swap(int *x,int *y){
 	*y = temp;
 }
 
+
 void selection(int a[],int n){
 	for(int i=0;i<n-1;i++){
 		int min=i;
