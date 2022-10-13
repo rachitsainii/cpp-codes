@@ -18,7 +18,6 @@ int main(){
 	g[5].push_back({3,1});
 
 	// Dijkstra's algorithm begins from here
-
 	priority_queue<pair<int,int>,vector<pair<int,int> >,greater<pair<int,int>>> pq; // Using priority queue with MIN HEAP ie lower distance always on top
 	vector<int> distTo(n+1,INT_MAX);//1-indexed array for calculating shortest paths
 	distTo[source] = 0;
