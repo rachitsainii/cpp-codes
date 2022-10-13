@@ -14,7 +14,7 @@ int knapsack(int *wt,int *val,int n,int W){
 			    else{
 			    	dp[i][j]=dp[i-1][j];
 			    }
-			}
+				}
 			}
 			return dp[n][W];
 		}
