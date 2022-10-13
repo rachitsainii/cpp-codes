@@ -25,7 +25,6 @@ int matrixMultiplication(int p[],int i,int j){
     return cache[i][j];
 }
 int main() {
-	// your code goes here
 	int n;
 	cin >> n;
 	int arr[n];
