@@ -12,6 +12,7 @@ void dfs1(vector<int> adj[],int u,vector<int>&visited,stack<int>&s)
   s.push(u);
   return;
 }
+
 void dfs2(vector<int> adj[],int u,vector<int>&visited)
 {
   visited[u]=0;
