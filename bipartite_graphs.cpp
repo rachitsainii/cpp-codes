@@ -20,6 +20,7 @@ bool bipartiteBfs(int src, vector<int> adj[], int color[]) {
     }
     return true; 
 }
+
 bool checkBipartite(vector<int> adj[], int n) {
     int color[n];
     memset(color, -1, sizeof color); 
