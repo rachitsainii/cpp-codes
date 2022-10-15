@@ -4,7 +4,9 @@ using namespace std;
 bool bipartiteBfs(int src, vector<int> adj[], int color[]) {
     queue<int>q;
     q.push(src); 
-    color[src] = 1; 
+    color[src] = 1;
+	
+	
     while(!q.empty()) {
         int node = q.front(); 
         q.pop();
