@@ -50,7 +50,5 @@ int main()
     	vector<int> v=obj.topo(6, adj);
     	for(auto it:v)
     	cout<<it<<" ";
-    
-
     return 0;
 }
