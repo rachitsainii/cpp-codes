@@ -41,4 +41,5 @@ int main() {
     heapSort(arr, n);
     cout << "\nSorted array is: ";
     printArray(arr, n);
+    return 0;
 }
