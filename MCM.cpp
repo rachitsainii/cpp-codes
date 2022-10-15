@@ -22,6 +22,7 @@ int matrixMultiplication(int p[],int i,int j){
         }
     }
     cache[i][j] = min;
+	
     return cache[i][j];
 }
 int main() {
