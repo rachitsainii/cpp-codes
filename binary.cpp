@@ -40,4 +40,5 @@ int main()
  auto stop = steady_clock::now();
  auto duration = duration_cast<nanoseconds>(stop - start);
  cout << "\nTime taken by function: "<< duration.count() << " nanoseconds" << endl;
+ return 0;
 }
