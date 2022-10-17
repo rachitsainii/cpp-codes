@@ -1,80 +1,57 @@
 #include<bits/stdc++.h>
-using namespace std;
-
-void dfs1(vector<int> adj[],int u,vector<int>&visited,stack<int>&s)
-{
-  visited[u]=1;
-  for(int i=0;i<adj[u].size();i++)
-  {
-    if(visited[adj[u][i]]==0)
-      dfs1(adj,adj[u][i],visited,s);
-  }
-  s.push(u);
-  return;
+void dfs(int node,unordered_map<int,bool> &vis,stack<int> &s, unordered_map<int,list<int>> &adj){
+    vis[node]=true;
+    for(auto nbr: adj[node]){
+        if(!vis[nbr]){
+            dfs(nbr,vis,s,adj);
 }
-
-void dfs2(vector<int> adj[],int u,vector<int>&visited)
-{
-  visited[u]=0;
-  for(int i=0;i<adj[u].size();i++)
-  {
-    if(visited[adj[u][i]]==1)
-      dfs2(adj,adj[u][i],visited);
-  }
-  cout<<u<<" ";
-  return;
 }
-int kosaraju(int V, vector<int> adj[])
-{
-  vector<int>visited(V,0);
-  stack<int>s;
-  for(int i=0;i<V;i++)
-  {
-    if(visited[i]==0)
-      dfs1(adj,i,visited,s);
-  }
-  vector<int>newadj[V];
-  for(int i=0;i<V;i++)
-  {
-    for(int j=0;j<adj[i].size();j++)
-      newadj[adj[i][j]].push_back(i);
-  }
-  int c=0;
-  while(!s.empty())
-  {
-    while(!s.empty()&&visited[s.top()]==0)
-      s.pop();
-    if(s.empty())
-      return c;
-    c++;
-    dfs2(newadj,s.top(),visited);
-    cout<<endl;
-    s.pop();
-  }
-  return c;
+//     topo logic
+    s.push(node);
 }
-int main() {
-  cout<<"Enter number of nodes: ";
-  int v;
-  cin>>v;
-  cout<<"Enter number of edges: ";
-  int e;
-  cin>>e;
-  vector<int> adj[v];
-  cout<<"\nNOTE 1: For undirected edge enter two different edges\n";
-  cout<<"\nNOTE 2: Nodes are numbered from 0 to v-1\n\n";
-  for(int i=0;i<e;i++)
-  {
-    cout<<"\nEnter details of edge "<<i+1<<endl;
-    int start,end;
-    cout<<"Enter start node: ";
-    cin>>start;
-    cout<<"Enter end node: ";
-    cin>>end;
-    adj[start].push_back(end);
-  }
-  cout<<"\nStrongly connected componets are: "<<endl;
-  int n=kosaraju(v,adj);
-  cout<<"\nNumber of Strongly Connected Components is "<<n;
-  return 0;
+void revDfs(int node,unordered_map<int,bool> &vis,unordered_map<int,list<int>> &adj){
+vis[node]=true;
+    for(auto nbr:adj[node]){
+        if(!vis[nbr]){
+revDfs(nbr,vis,adj);
+        }
+}
+}
+int stronglyConnectedComponents(int v, vector<vector<int>> &edges)
+{
+	// Write your code here.
+//     create an adj list
+    unordered_map<int,list<int>> adj;
+    for(int i=0;i<edges.size();i++){
+int u=edges[i][0];
+ int v=edges[i][1];
+    adj[u].push_back(v);
+    }
+//     topo sort
+    stack<int> s;
+    unordered_map<int,bool> vis;
+    for(int i=0;i<v;i++){
+if(!vis[i]){
+    dfs(i,vis,s,adj);
+}
+    }
+//     create a transpose graph
+    unordered_map<int,list<int>> transpose;
+    for(int i=0;i<v;i++){
+        vis[i]=0;
+        for(auto nbr:adj[i]){
+            transpose[nbr].push_back(i);
+}
+}
+//     dfs call using above ordering
+    int count=0;
+    while(!s.empty()){
+        int top=s.top();
+        s.pop();
+        if(!vis[top]){
+            count++;
+            revDfs(top,vis,transpose);
+}
+}
+    return count;
 }
