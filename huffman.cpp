@@ -5,7 +5,7 @@
 #include <string>
 
 using namespace std;
-
+//huffman
 class Huffman_Codes
 {
  struct New_Node

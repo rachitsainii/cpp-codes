@@ -58,4 +58,5 @@ int main() {
   cout<<"\nLongest common subsequence is: "<<getLCS(dp,s1,s2)<<endl<<endl;
   cout<<"DP Table:\n";
   print(dp);
+  return 0;
 }
