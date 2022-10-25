@@ -24,8 +24,7 @@ int main(){
 	pq.push(make_pair(0,source));	// (dist,source)
 
 	while( !pq.empty() ){
-
-		int dist = pq.top().first;
+                int dist = pq.top().first;
 		int prev = pq.top().second;
 		pq.pop();
 
