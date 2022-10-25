@@ -120,4 +120,5 @@ int strassen(int *A, int *B, int *C, int m, int n){
         strassen(A+m*(n+1),B+m*n,C+m*n,m,n);
         strassen(A+m*(n+1),B+m*(n+1),C+m*(n+1),m,n);
     }
+    return 0;
 }
