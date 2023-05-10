@@ -3,23 +3,27 @@
 
 int days_in_months[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-int date(int ddmmyyyy) {
+int date(int ddmmyyyy)
+{
   int d = ddmmyyyy / 1000000;
   return d;
 }
 
-int month(int ddmmyyyy) {
+int month(int ddmmyyyy)
+{
   int temp = ddmmyyyy % 1000000;
   int m = temp / 10000;
   return m;
 }
 
-int year(int ddmmyyyy) {
+int year(int ddmmyyyy)
+{
   int y = ddmmyyyy % 10000;
   return y;
 }
 
-int isleap(int year) {
+int isleap(int year)
+{
   if (year % 400 == 0)
     return 1;
 
@@ -33,16 +37,19 @@ int isleap(int year) {
     return 0;
 }
 
-int number_of_days(int year) {
+int number_of_days(int year)
+{
   int leap_days = 0;
-  for (int i = 1; i <= year; i++) {
+  for (int i = 1; i <= year; i++)
+  {
     if (isleap(i) == 1)
       leap_days++;
   }
   return leap_days;
 }
 
-int isvalid(int date, int month, int year) {
+int isvalid(int date, int month, int year)
+{
   if (date > 31 || date <= 0)
     return 10;
   if (month > 12 || month <= 0)
@@ -61,7 +68,8 @@ int isvalid(int date, int month, int year) {
     return 1;
 }
 
-void main() {
+void main()
+{
   int ddmmyyyy_1, ddmmyyyy_2;
   printf("Enter first date(DDMMYYYY): ");
   scanf("%d", &ddmmyyyy_1);
@@ -94,23 +102,28 @@ void main() {
     printf("The year of date %d-%d-%d in invalid! Please check again\n", date_2,
            month_2, year_2);
 
-  if (ret1 == 1 && ret2 == 1) {
+  if (ret1 == 1 && ret2 == 1)
+  {
     int days_1 = 0;
     if (month_1 == 1)
       days_1 = 0;
-    else {
-      for (int i = 0; i < month_1; i++) {
+    else
+    {
+      for (int i = 0; i < month_1; i++)
+      {
         days_1 = days_1 + days_in_months[i];
       }
     }
-    
+
     int days1 = (year_1 - 1) * 365 + days_1 + date_1 + number_of_days(year_1);
 
     int days_2 = 0;
     if (month_2 == 1)
       days_2 = 0;
-    else {
-      for (int i = 0; i < month_2; i++) {
+    else
+    {
+      for (int i = 0; i < month_2; i++)
+      {
         days_2 = days_2 + days_in_months[i];
       }
     }
@@ -119,11 +132,14 @@ void main() {
     int NumberOfDays = days2 - days1 + 1;
 
     if ((month_1 < 3 && month_2 > 2) && year_1 == year_2 &&
-        isleap(year_1) == 1) {
+        isleap(year_1) == 1)
+    {
       NumberOfDays = NumberOfDays + 1;
       printf("Number days between dates %d-%d-%d and %d-%d-%d are: %d\n",
              date_1, month_1, year_1, date_2, month_2, year_2, NumberOfDays);
-    } else {
+    }
+    else
+    {
       printf("Number days between dates %d-%d-%d and %d-%d-%d are: %d\n",
              date_1, month_1, year_1, date_2, month_2, year_2, NumberOfDays);
     }
