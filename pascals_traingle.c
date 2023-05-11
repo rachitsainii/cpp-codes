@@ -2,14 +2,14 @@
 
 long long fact(long long num)
 {
-    long long factorial=1;
-    while(num>0)
+    long long factorial = 1;
+    while (num > 0)
     {
-        factorial=factorial*num;
+        factorial = factorial * num;
         num--;
     }
 
-    if (num==0)
+    if (num == 0)
     {
         return factorial;
     }
@@ -18,7 +18,7 @@ long long fact(long long num)
 long long combination(long long n, long long r)
 {
     long long c;
-    c=fact(n)/(fact(r)*fact(n-r));
+    c = fact(n) / (fact(r) * fact(n - r));
     return c;
 }
 
@@ -32,21 +32,22 @@ void main()
     {
         printf("  ");
     }
-    
-    if (lines>=1) printf(" 1\n");   
+
+    if (lines >= 1)
+        printf(" 1\n");
 
     for (int i = 1; i < lines; i++)
     {
-        long temp=0;
-        for (int s = 0; s < lines-i; s++)
+        long temp = 0;
+        for (int s = 0; s < lines - i; s++)
         {
             printf("  ");
         }
         while (temp <= i)
         {
-            printf("% 4lld", combination(i,temp));
+            printf("% 4lld", combination(i, temp));
             temp++;
         }
-        printf("\n");      
+        printf("\n");
     }
 }
