@@ -53,11 +53,11 @@ int main()
     return 0;
 }
 
-INPUT : 5 2 5 4 3 6
+// INPUT : 5 2 5 4 3 6
 
-    OUTPUT : Minimum number of Scalar matrix Multiplication : 102 0 0 30 54 102 0 0 0 60 162 0 0 0 0 72 0 0 0 0 0 0 0 0 0 0
+//     OUTPUT : Minimum number of Scalar matrix Multiplication : 102 0 0 30 54 102 0 0 0 60 162 0 0 0 0 72 0 0 0 0 0 0 0 0 0 0
 
-             EXPLANATION : Dimensions of 4 matrix : M1 = 2x5 M2 = 5x4 M3 = 4x3 M4 = 3x6
+//              EXPLANATION : Dimensions of 4 matrix : M1 = 2x5 M2 = 5x4 M3 = 4x3 M4 = 3x6
 
-                                                    m(1, 2) = p0.p1.p2 = M1xM2
-                                                        m(1, 3) = min(m(1, 2) + m(3, 3) + p0.p2.p3, m(1, 1) + m(2, 3) + p0.p1.p3) = min((M1xM2)M3, M1(M2xM3)) and so on..
+//                                                     m(1, 2) = p0.p1.p2 = M1xM2
+//                                                         m(1, 3) = min(m(1, 2) + m(3, 3) + p0.p2.p3, m(1, 1) + m(2, 3) + p0.p1.p3) = min((M1xM2)M3, M1(M2xM3)) and so on..
