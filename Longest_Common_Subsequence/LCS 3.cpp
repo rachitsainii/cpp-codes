@@ -42,12 +42,12 @@ int main()
     return 0;
 }
 
-INPUT : gene
-            genome
-                gender
+// INPUT : gene
+//             genome
+//                 gender
 
-                    OUTPUT : 4
+//                     OUTPUT : 4
 
-        Explanation : "gene" is present in all 3 strings.gen e
-                          gen om e
-                              gen d e r
+//         Explanation : "gene" is present in all 3 strings.gen e
+//                           gen om e
+//                               gen d e r
