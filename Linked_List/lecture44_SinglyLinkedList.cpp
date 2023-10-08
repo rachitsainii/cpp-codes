@@ -144,13 +144,8 @@ int main() {
 
   head = deleteFromHead(head);
   head = deleteFromHead(head);
-
-  // SingleLLNode *head1 = new SingleLLNode(10);
-
-  // head1 = deleteFromMiddle(head1, 10);
   head = deleteFromMiddle(head, 10);
 
-  // print(head1);
   print(head);
 
   return 0;
