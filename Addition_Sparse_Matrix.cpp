@@ -8,6 +8,7 @@ class Element
 
   public:
 
+
     int i;
   int j;
   int x;
