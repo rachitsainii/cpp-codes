@@ -17,6 +17,7 @@ int lcs3(string s1, string s2, string s3, int m, int n, int o, int cache[101][10
     return cache[m][n][o];
 }
 
+
 int lcs3(string s1, string s2, string s3, int m, int n, int o){
     int cache[101][101][101];
     memset(cache,-1,sizeof(cache));
